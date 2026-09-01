@@ -20,9 +20,11 @@
 4. Photo gallery (bento grid, placeholder images to swap with real photos)
 5. Interactive surprises: poppable balloons + confetti, "Make a wish" cannon
 6. Message wall: visitors post wishes (name, tag, message, accent color) stored in MongoDB
+7. Interactive cake: Parul blows out candles via microphone (tap fallback); hidden birthday message + confetti reveal when all flames are out
 
 ## Implemented
 - 2026-09-01: Full site built and verified — Hero (parallax floating balloons, masked reveal), Countdown (live ticking, verified 24 days remaining), editorial marquee, 4 manifesto chapters, bento photo gallery, balloon-pop surprise zone with confetti, wish wall (POST/GET /api/wishes, seeded 2 sample wishes), footer. Lenis smooth scroll + framer-motion reveals throughout. Verified via curl (API post/list) and Playwright (balloon pop, wish submit, all sections render).
+- 2026-09-01: Cake Moment section (#cake) — 5 striped candles with flickering CSS flames on a two-tier pastel cake; blow-out via microphone (Web Audio RMS detection with strength meter) OR tap-each-flame fallback; when all flames are out: smoke wisps, double confetti cannon, and a hidden "Happy Birthday, Parul." message card reveals with a relight button. Verified via Playwright (tap path, message + relight confirmed). Mic path built but not testable headless.
 
 ## Backlog
 - P0: Replace gallery placeholder photos with real photos of Parul
