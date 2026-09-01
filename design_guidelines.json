@@ -1,0 +1,150 @@
+{
+  "project_title": "Parul's Birthday Celebration — September 26",
+  "archetype": "Pastel & Soft Dreamy Editorial",
+  "app_type": "landing_page",
+  "theme": "Light & Dreamy (Blush Pink, Soft Lavender, Champagne Cream, Warm Mulberry Text)",
+  "color_palette": {
+    "background": {
+      "primary": "#FFFDF9",
+      "secondary": "#FAF4F7",
+      "accent_surface": "#F5E9F3"
+    },
+    "text": {
+      "heading": "#2D1527",
+      "body": "#4A3245",
+      "muted": "#7C6377",
+      "accent": "#9E4770"
+    },
+    "brand_accents": {
+      "blush_pink": "#F4C2D7",
+      "soft_lavender": "#E3C9FF",
+      "glowing_rose": "#E86A92",
+      "warm_gold": "#F7D070",
+      "champagne": "#F9F3E5"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at 50% 30%, rgba(244, 194, 215, 0.45) 0%, rgba(227, 201, 255, 0.25) 45%, rgba(255, 253, 249, 0) 70%)",
+      "card_surface": "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 233, 243, 0.6) 100%)",
+      "balloon_glow": "radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.8) 0%, rgba(232, 106, 146, 0.7) 60%, rgba(158, 71, 112, 0.9) 100%)"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Cormorant Garamond, Playfair Display, serif",
+      "styles": {
+        "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.08] text-[#2D1527]",
+        "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#2D1527]",
+        "h3_card": "text-xl sm:text-2xl font-normal text-[#2D1527]"
+      }
+    },
+    "body": {
+      "font_family": "Plus Jakarta Sans, Outfit, sans-serif",
+      "styles": {
+        "lead": "text-lg sm:text-xl font-light text-[#4A3245] leading-relaxed",
+        "regular": "text-base font-normal text-[#4A3245] leading-relaxed",
+        "small": "text-sm text-[#7C6377]",
+        "caption": "text-xs font-medium uppercase tracking-[0.2em] text-[#9E4770]"
+      }
+    }
+  },
+  "image_urls": {
+    "hero_portrait": "https://images.unsplash.com/photo-1642893746099-1bdb7675acbb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxkcmVhbXklMjBwYXN0ZWwlMjBhZXN0aGV0aWMlMjBwb3J0cmFpdHMlMjB3b21lbiUyMGVsZWdhbmNlfGVufDB8fHx8MTc4ODI3NDg4MHww&ixlib=rb-4.1.0&q=85",
+    "gallery_1_flowers": "https://images.unsplash.com/photo-1672424290532-65e205435307?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxiaXJ0aGRheSUyMGNlbGVicmF0aW9uJTIwYWVzdGhldGljJTIwZmxvd2VycyUyMGxpZ2h0cyUyMHNvZnQlMjBwYXN0ZWx8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85",
+    "gallery_2_cake": "https://images.unsplash.com/photo-1654605218844-4b250fd445a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMGNlbGVicmF0aW9uJTIwYWVzdGhldGljJTIwZmxvd2VycyUyMGxpZ2h0cyUyMHNvZnQlMjBwYXN0ZWx8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85",
+    "gallery_3_roses": "https://images.unsplash.com/photo-1616369939022-b6e3e7a82295?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxiaXJ0aGRheSUyMGNlbGVicmF0aW9uJTIwYWVzdGhldGljJTIwZmxvd2VycyUyMGxpZ2h0cyUyMHNvZnQlMjBwYXN0ZWx8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85",
+    "gallery_4_celebration_cake": "https://images.unsplash.com/photo-1747576660172-949fe54dee36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxiaXJ0aGRheSUyMGNlbGVicmF0aW9uJTIwYWVzdGhldGljJTIwZmxvd2VycyUyMGxpZ2h0cyUyMHNvZnQlMjBwYXN0ZWx8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85",
+    "background_bokeh_lights": "https://images.unsplash.com/photo-1519750783826-e2420f4d687f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxzb2Z0JTIwcGluayUyMGxhdmVuZGVyJTIwYWVzdGhldGljJTIwdGV4dHVyZXMlMjBib2tlaCUyMGdsb3d8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85",
+    "lavender_fields": "https://images.unsplash.com/photo-1477511801984-4ad318ed9846?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxzb2Z0JTIwcGluayUyMGxhdmVuZGVyJTIwYWVzdGhldGljJTIwdGV4dHVyZXMlMjBib2tlaCUyMGdsb3d8ZW58MHx8fHwxNzg4Mjc0ODc5fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "layout_sections": [
+    {
+      "id": "navigation",
+      "name": "Floating Crystal Navigation Bar",
+      "description": "Sticky backdrop-blur navigation with audio toggle sound effect, quick jump links, and interactive surprise trigger button.",
+      "components": ["Logo / Name badge 'Parul.26'", "Jump Links: Countdown, Chapters, Memories, Wishes", "Play Audio / Atmosphere sound toggle", "Pop Balloon trigger CTA"]
+    },
+    {
+      "id": "hero",
+      "name": "Kinetic Dreamy Hero",
+      "description": "Masked line-by-line typography reveal with subtle floating balloons and soft ambient light mesh.",
+      "key_features": ["Subtitle: 'Celebrating another trip around the sun'", "Headline: 'Happy Birthday, Parul'", "Date pill badge: 'September 26'", "Interactive floating balloons background"],
+      "data_testid": "hero-section"
+    },
+    {
+      "id": "countdown",
+      "name": "Live September 26 Countdown",
+      "description": "Elegant clock counter tracking Days, Hours, Minutes, Seconds until September 26 celebration with festive confetti trigger when active.",
+      "data_testid": "countdown-timer"
+    },
+    {
+      "id": "manifesto_chapters",
+      "name": "Birthday Chapters / Story Manifesto",
+      "description": "Numbered editorial accordions or staggered story cards highlighting traits, milestones, and heartfelt chapters dedicated to Parul.",
+      "chapters": [
+        "Chapter 01 — The Light in Every Room",
+        "Chapter 02 — Unapologetically Radiant",
+        "Chapter 03 — A Year of Big Dreams & Laughter",
+        "Chapter 04 — Wishes for the Journey Ahead"
+      ],
+      "data_testid": "manifesto-chapters"
+    },
+    {
+      "id": "marquee",
+      "name": "Editorial Ribbon Marquee",
+      "description": "Slow, organic drifting low-contrast marquee text featuring sweet birthday mantras.",
+      "content": "✨ WISHING PARUL THE MAGICAL YEAR EVER • SEPTEMBER 26 • CELEBRATE LOVE & LAUGHTER • RADIANT VIBES ALWAYS ✨"
+    },
+    {
+      "id": "photo_gallery",
+      "name": "Interactive Memory Wall (Bento Grid)",
+      "description": "Asymmetric Bento Grid photo gallery with custom frame styling, light zoom effects, and memory quotes.",
+      "data_testid": "photo-gallery"
+    },
+    {
+      "id": "interactive_surprises",
+      "name": "Interactive Surprise Zone (Balloon Pop & Confetti Cannon)",
+      "description": "Interactive floating balloons that users can click to pop with sound & gentle confetti release, plus a 'Make a Wish' virtual candle lighting moment.",
+      "data_testid": "interactive-surprises"
+    },
+    {
+      "id": "message_wall",
+      "name": "Interactive Wishes & Message Wall",
+      "description": "Live wish feed where friends can leave personalized birthday notes, choose an emoji/color badge, and submit wishes dynamically stored in backend API.",
+      "form_fields": ["Author Name", "Relationship / Tag (e.g., Bestie, College Pal, Family)", "Heartfelt Message", "Select Accent Color"],
+      "data_testid": "message-wall"
+    },
+    {
+      "id": "footer",
+      "name": "Editorial Heartfelt Footer",
+      "description": "Deep rose/mulberry contrasting footer section with large decorative serif text 'Made with love for Parul' and quick restart surprise buttons.",
+      "data_testid": "footer-section"
+    }
+  ],
+  "motion_and_effects": {
+    "library": "framer-motion + canvas-confetti + lenis",
+    "animations": {
+      "entrance": "Staggered fade-up with spring physics (stiffness: 100, damping: 15)",
+      "balloon_float": "Continuous smooth Y-axis floating sine wave (duration: 6s - 10s)",
+      "hover": "Scale 1.03 with glow border highlight",
+      "confetti": "Custom canvas-confetti burst on wish submit and balloon pop"
+    }
+  },
+  "testing_conventions": {
+    "rule": "Every interactive element must feature data-testid using kebab-case",
+    "examples": [
+      "data-testid='countdown-days'",
+      "data-testid='wish-input-name'",
+      "data-testid='wish-input-message'",
+      "data-testid='submit-wish-button'",
+      "data-testid='pop-balloon-btn'",
+      "data-testid='audio-toggle-btn'"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build an Awwwards-level dreamy, elegant single-page celebration experience for Parul.",
+    "Ensure generous padding (p-8 to p-16), soft pastel colors, and rich typography hierarchy.",
+    "Use framer-motion for smooth scroll reveals and interactive balloon floating physics.",
+    "Implement the live wish wall with dynamic state and seamless submission.",
+    "Strictly follow data-testid naming standards across all key UI components."
+  ]
+}
