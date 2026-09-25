@@ -32,7 +32,7 @@ const CHAPTERS = [
   {
     num: "08",
     title: "You Inspire Me",
-    text: "If you remember, I told you this the very first time we spoke — the way you manage yourself and handle everything on your own has always inspired me. Cooking, managing the house, going to the market, handling work, staying away from your family, and even pushing through difficult days when you’re sick — you somehow keep going and give your best every single day. Seeing that motivates me to work harder too. No matter what you do or wherever you are, I’ll always respect and admire you. ❤️ They say, “God helps those who help themselves,” and seeing you makes me believe it. ✨",
+    text: "If you remember, I told you this the very first time we spoke. the way you manage yourself and handle everything on your own has always inspired me. Cooking, managing the house, going to the market, handling work, staying away from your family, and even pushing through difficult days when you’re sick. you somehow keep going and give your best every single day. Seeing that motivates me to work harder too. No matter what you do or wherever you are, I’ll always respect and admire you. ❤️ They say, “God helps those who help themselves,” and seeing you makes me believe it. ✨",
     wide: true,
   },
 ];
