@@ -7,11 +7,6 @@ const CHAPTERS = [
     text: "Some people walk into a room and the whole place softens. That is you, Parul — warmth that asks for nothing and gives everything.",
   },
   {
-    num: "03",
-    title: "A Year of Big Dreams & Laughter",
-    text: "This past year you chased things that scared you and turned ordinary days into stories worth retelling. We noticed. We always notice.",
-  },
-  {
     num: "04",
     title: "Wishes for the Journey Ahead",
     text: "May September 26 open a chapter of soft mornings, brave choices, and love that finds you exactly where you are.",
