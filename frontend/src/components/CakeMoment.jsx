@@ -5,6 +5,8 @@ import { Mic, Flame, RotateCcw, Sparkles, MousePointerClick } from "lucide-react
 
 const CONFETTI_COLORS = ["#F4C2D7", "#E3C9FF", "#E86A92", "#F7D070", "#9E4770"];
 const CANDLE_COUNT = 5;
+const BLOW_THRESHOLD = 0.035;
+const BLOW_FRAMES_NEEDED = 8;
 
 const FlameWisp = ({ lit }) => (
   <div className="relative h-8 w-5 flex items-end justify-center">
@@ -72,14 +74,20 @@ export default function CakeMoment() {
 
   const startMic = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: true },
+      });
       const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      await ctx.resume();
       const analyser = ctx.createAnalyser();
-      analyser.fftSize = 512;
+      analyser.fftSize = 1024;
       ctx.createMediaStreamSource(stream).connect(analyser);
       audioRef.current = { stream, ctx, analyser };
       setMicOn(true);
+      setMicDenied(false);
       const data = new Uint8Array(analyser.fftSize);
+      let smooth = 0;
+      let blowFrames = 0;
       const loop = () => {
         if (!audioRef.current) return;
         analyser.getByteTimeDomainData(data);
@@ -89,8 +97,17 @@ export default function CakeMoment() {
           sum += v * v;
         }
         const rms = Math.sqrt(sum / data.length);
-        setStrength(Math.min(1, rms * 4));
-        if (rms > 0.12) extinguishNext();
+        smooth = smooth * 0.55 + rms * 0.45;
+        setStrength(Math.min(1, smooth * 8));
+        if (smooth > BLOW_THRESHOLD) {
+          blowFrames += 1;
+          if (blowFrames >= BLOW_FRAMES_NEEDED) {
+            extinguishNext();
+            blowFrames = 0;
+          }
+        } else {
+          blowFrames = Math.max(0, blowFrames - 2);
+        }
         rafRef.current = requestAnimationFrame(loop);
       };
       loop();
@@ -212,7 +229,7 @@ export default function CakeMoment() {
                   style={{ width: `${Math.round(strength * 100)}%` }}
                 />
               </div>
-              <span className="text-xs text-[#7C6377]">blow harder!</span>
+              <span className="text-xs text-[#7C6377]">blow into your mic!</span>
             </div>
           )}
         </div>

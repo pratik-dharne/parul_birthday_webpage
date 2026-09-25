@@ -5,6 +5,7 @@ const PHOTOS = [
   {
     src: "https://images.unsplash.com/photo-1654605218844-4b250fd445a7?crop=entropy&cs=srgb&fm=jpg&q=85",
     caption: "Make a wish",
+    overlay: "Happy Birthday Parul",
     span: "sm:col-span-7 sm:row-span-2",
     ratio: "aspect-[4/3] sm:aspect-auto sm:h-full",
   },
@@ -69,10 +70,20 @@ export default function Gallery() {
             >
               <img
                 src={p.src}
-                alt={p.caption}
+                alt={p.overlay || p.caption}
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
+              {p.overlay && (
+                <div
+                  data-testid="gallery-cake-overlay"
+                  className="absolute inset-0 flex items-center justify-center bg-[#2D1527]/30"
+                >
+                  <span className="font-display italic text-3xl sm:text-5xl text-white text-center px-6 leading-snug drop-shadow-[0_4px_20px_rgba(45,21,39,0.65)]">
+                    {p.overlay}
+                  </span>
+                </div>
+              )}
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2D1527]/60 to-transparent p-5 opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                 <span className="font-display italic text-lg text-white">{p.caption}</span>
               </figcaption>

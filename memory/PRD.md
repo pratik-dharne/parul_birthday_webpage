@@ -1,40 +1,40 @@
-# PRD — Parul's Birthday Celebration Website
+# PRD — Parul's Birthday Website
 
 ## Original Problem Statement
-"my friend brithday is coming up on september 26 i want to create website that wishes here birthday and provide here birthday wishes" — friend name: **Parul**, birthday **September 26**.
+"my friend brithday is coming up on september 26 i want to create website that wishes here birthday and provide here birthday wishes"
+
+## Product Summary
+An elegant, dreamy single-page birthday experience for Parul (birthday: September 26). Pastel editorial aesthetic with soft colors, glowing visuals, floating confetti, smooth momentum scrolling (Lenis) and Framer Motion animations.
 
 ## User Personas
-- The friend (site owner) who creates and shares the site with Parul and their circle
-- Parul (the birthday celebrant, primary audience)
-- Friends/family visitors who leave wishes on the message wall
-
-## Architecture
-- Frontend: React 19 + Tailwind + framer-motion + lenis + canvas-confetti (CRA/craco, port 3000)
-- Backend: FastAPI (port 8001, /api prefix) + MongoDB via motor
-- No authentication — public celebration page; wish wall is open by design
+- The friend (site creator) — wants a beautiful surprise page for Parul
+- Parul (the recipient) — opens the page on/around Sept 26, interacts with candles and surprises
 
 ## Core Requirements (static)
-1. Kinetic dreamy hero with masked line reveal — "Happy Birthday, Parul"
-2. Live countdown to September 26 (auto-rolls to next year; celebration state on the day)
-3. Birthday wishes / manifesto chapters section
-4. Photo gallery (bento grid, placeholder images to swap with real photos)
-5. Interactive surprises: poppable balloons + confetti, "Make a wish" cannon
-6. Message wall: visitors post wishes (name, tag, message, accent color) stored in MongoDB
-7. Interactive cake: Parul blows out candles via microphone (tap fallback); hidden birthday message + confetti reveal when all flames are out
+- Elegant & dreamy aesthetic (soft pastels, glow, confetti)
+- Live countdown to September 26
+- Photo gallery / memory wall
+- Interactive surprises (balloon pops, confetti)
+- Microphone-enabled virtual cake: blow out candles to reveal a birthday message
+- ~~Wish Wall~~ — REMOVED per user request (2026-09-25)
+
+## Architecture
+- Frontend: React + Tailwind + Framer Motion + Lenis + canvas-confetti (`/app/frontend`)
+- Backend: FastAPI minimal (`/app/backend/server.py`) — health/root endpoints only; no DB features currently
+- No active DB collections (wishes collection deprecated with Wish Wall removal)
 
 ## Implemented
-- 2026-09-01: Full site built and verified — Hero (parallax floating balloons, masked reveal), Countdown (live ticking, verified 24 days remaining), editorial marquee, 4 manifesto chapters, bento photo gallery, balloon-pop surprise zone with confetti, wish wall (POST/GET /api/wishes, seeded 2 sample wishes), footer. Lenis smooth scroll + framer-motion reveals throughout. Verified via curl (API post/list) and Playwright (balloon pop, wish submit, all sections render).
-- 2026-09-01: Cake Moment section (#cake) — 5 striped candles with flickering CSS flames on a two-tier pastel cake; blow-out via microphone (Web Audio RMS detection with strength meter) OR tap-each-flame fallback; when all flames are out: smoke wisps, double confetti cannon, and a hidden "Happy Birthday, Parul." message card reveals with a relight button. Verified via Playwright (tap path, message + relight confirmed). Mic path built but not testable headless.
+- 2026-09-24: Hero, Countdown (Sept 26), Marquee, Chapters, Gallery (memory wall), SurpriseZone (balloon pops), CakeMoment (mic candle blowing), Footer, design system from design_guidelines.json
+- 2026-09-24: FastAPI backend with wishes API (later removed)
+- 2026-09-25: Removed Wish Wall (frontend section, nav link, backend /api/wishes endpoints, MongoDB usage) per user request
+- 2026-09-25: Fixed microphone blow detection in CakeMoment — lower RMS threshold (0.035), smoothed volume with sustained-blow frame counting, noiseSuppression/echoCancellation disabled, AudioContext explicitly resumed; tap-to-blow fallback retained
+- 2026-09-25: Memory wall now features the birthday cake photo with an always-visible "Happy Birthday Parul" text overlay
 
-## Backlog
-- P0: Replace gallery placeholder photos with real photos of Parul
-- P1: Background music toggle (soft instrumental)
-- P1: Shareable link button / QR for sending to friends
-- P2: Password-gate so Parul only sees it on her birthday
-- P2: Photo upload for visitors (needs object storage integration)
-- P2: Animated candle-blowing (mic input) moment
+## Backlog (prioritized)
+- P1: Swap placeholder gallery images with real personal photos of Parul (user-supplied)
+- P2: Music toggle so the page plays a tune when opened
+- P3: Optional gate/password lock to keep the site secret until September 26
 
 ## Next Tasks
-1. Swap gallery images with personal photos
-2. Add music toggle
-3. Optional: gate the site until Sept 26
+1. Ask user for real photos of Parul to replace gallery placeholders
+2. Confirm mic blowing works on the user's real device

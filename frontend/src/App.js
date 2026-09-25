@@ -9,7 +9,6 @@ import Chapters from "@/components/Chapters";
 import Gallery from "@/components/Gallery";
 import SurpriseZone from "@/components/SurpriseZone";
 import CakeMoment from "@/components/CakeMoment";
-import WishWall from "@/components/WishWall";
 import Footer from "@/components/Footer";
 
 const Nav = () => (
@@ -29,7 +28,6 @@ const Nav = () => (
       <a data-testid="nav-link-chapters" href="#chapters" className="hover:text-[#9E4770] transition-colors">Chapters</a>
       <a data-testid="nav-link-memories" href="#memories" className="hover:text-[#9E4770] transition-colors">Memories</a>
       <a data-testid="nav-link-cake" href="#cake" className="hover:text-[#9E4770] transition-colors">Cake</a>
-      <a data-testid="nav-link-wishes" href="#wishes" className="hover:text-[#9E4770] transition-colors">Wishes</a>
     </div>
     <a
       href="#surprises"
@@ -67,7 +65,6 @@ export default function App() {
         <Gallery />
         <SurpriseZone />
         <CakeMoment />
-        <WishWall />
       </main>
       <Footer />
       <Toaster position="bottom-center" />
