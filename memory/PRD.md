@@ -29,12 +29,15 @@ An elegant, dreamy single-page birthday experience for Parul (birthday: Septembe
 - 2026-09-25: Removed Wish Wall (frontend section, nav link, backend /api/wishes endpoints, MongoDB usage) per user request
 - 2026-09-25: Fixed microphone blow detection in CakeMoment — lower RMS threshold (0.035), smoothed volume with sustained-blow frame counting, noiseSuppression/echoCancellation disabled, AudioContext explicitly resumed; tap-to-blow fallback retained
 - 2026-09-25: Memory wall now features the birthday cake photo with an always-visible "Happy Birthday Parul" text overlay
+- 2026-09-25: Real photos of Parul added to memory wall (5 user-supplied photos in /app/frontend/public/photos/: sunflowers night street, orange selfie, graduation, white traditional outfit, 4-photo collage) alongside the cake overlay tile; graduation photo cropped to remove a video play-button artifact
+- 2026-09-25: Music toggle (MusicToggle.jsx) — floating button bottom-right, plays a Web Audio synthesized "Happy Birthday" melody on loop; auto-starts after unlock (falls back to first tap anywhere due to browser autoplay policy)
+- 2026-09-25: Password gate (PasswordGate.jsx) — site hidden until Sept 26 (auto-opens on/after); early-access password "parul26" remembered via localStorage
+- 2026-09-25: Candle mic sensitivity loosened further (RMS threshold 0.028, 6 sustained frames)
 
 ## Backlog (prioritized)
-- P1: Swap placeholder gallery images with real personal photos of Parul (user-supplied)
-- P2: Music toggle so the page plays a tune when opened
-- P3: Optional gate/password lock to keep the site secret until September 26
+- P1: Confirm mic blowing works on a real device; tune threshold again if needed
+- P2: Replace the cake stock photo with a real photo of Parul's cake if the user has one
 
 ## Next Tasks
-1. Ask user for real photos of Parul to replace gallery placeholders
-2. Confirm mic blowing works on the user's real device
+1. User verifies the birthday tune and mic blowing on their own device
+2. Share the site with Parul on September 26

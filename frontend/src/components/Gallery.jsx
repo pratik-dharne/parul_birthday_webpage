@@ -1,37 +1,43 @@
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const PHOTOS = [
   {
-    src: "https://images.unsplash.com/photo-1654605218844-4b250fd445a7?crop=entropy&cs=srgb&fm=jpg&q=85",
-    caption: "Make a wish",
-    overlay: "Happy Birthday Parul",
+    src: "/photos/parul-sunflowers.jpg",
+    caption: "City lights & sunflowers",
     span: "sm:col-span-7 sm:row-span-2",
     ratio: "aspect-[4/3] sm:aspect-auto sm:h-full",
   },
   {
-    src: "https://images.unsplash.com/photo-1672424290532-65e205435307?crop=entropy&cs=srgb&fm=jpg&q=85",
-    caption: "Bloom where you are",
+    src: "/photos/parul-orange.jpg",
+    caption: "That smile",
     span: "sm:col-span-5",
     ratio: "aspect-[4/3]",
   },
   {
-    src: "https://images.unsplash.com/photo-1616369939022-b6e3e7a82295?crop=entropy&cs=srgb&fm=jpg&q=85",
-    caption: "Soft like rose petals",
+    src: "/photos/parul-graduation.jpg",
+    caption: "Conqueror of degrees",
     span: "sm:col-span-5",
     ratio: "aspect-[4/3]",
   },
   {
-    src: "https://images.unsplash.com/photo-1519750783826-e2420f4d687f?crop=entropy&cs=srgb&fm=jpg&q=85",
-    caption: "Every light for you",
+    src: "/photos/parul-white.jpg",
+    caption: "Elegance, personified",
     span: "sm:col-span-4",
     ratio: "aspect-[4/3]",
   },
   {
-    src: "https://images.unsplash.com/photo-1747576660172-949fe54dee36?crop=entropy&cs=srgb&fm=jpg&q=85",
-    caption: "Sweetest day of the year",
+    src: "https://images.unsplash.com/photo-1654605218844-4b250fd445a7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    caption: "Make a wish",
+    overlay: "Happy Birthday Parul",
     span: "sm:col-span-8",
     ratio: "aspect-[16/9]",
+  },
+  {
+    src: "/photos/parul-collage.jpg",
+    caption: "So many sides of you",
+    span: "sm:col-span-12",
+    ratio: "aspect-[16/9] sm:aspect-[21/7]",
   },
 ];
 
@@ -53,7 +59,7 @@ export default function Gallery() {
             </h2>
           </div>
           <p className="flex items-center gap-2 text-sm text-[#7C6377]" data-testid="gallery-hint">
-            <Camera size={15} className="text-[#9E4770]" /> Swap these with your favourite photos of Parul
+            <Heart size={15} className="text-[#E86A92]" /> Every one of these is so you, Parul
           </p>
         </motion.div>
 

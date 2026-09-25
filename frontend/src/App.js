@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
+import { AnimatePresence } from "framer-motion";
 import { Toaster } from "sonner";
 import { Sparkles } from "lucide-react";
 import Hero from "@/components/Hero";
@@ -9,6 +10,8 @@ import Chapters from "@/components/Chapters";
 import Gallery from "@/components/Gallery";
 import SurpriseZone from "@/components/SurpriseZone";
 import CakeMoment from "@/components/CakeMoment";
+import MusicToggle from "@/components/MusicToggle";
+import PasswordGate, { isBirthdayOrLater } from "@/components/PasswordGate";
 import Footer from "@/components/Footer";
 
 const Nav = () => (
@@ -40,6 +43,10 @@ const Nav = () => (
 );
 
 export default function App() {
+  const [unlocked, setUnlocked] = useState(
+    () => isBirthdayOrLater() || localStorage.getItem("parul-unlocked") === "yes"
+  );
+
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
     let rafId;
@@ -56,6 +63,9 @@ export default function App() {
 
   return (
     <div className="bg-[#FFFDF9] text-[#4A3245] antialiased overflow-x-clip">
+      <AnimatePresence>
+        {!unlocked && <PasswordGate onUnlock={() => setUnlocked(true)} />}
+      </AnimatePresence>
       <Nav />
       <main>
         <Hero />
@@ -67,6 +77,7 @@ export default function App() {
         <CakeMoment />
       </main>
       <Footer />
+      <MusicToggle autostart={unlocked} />
       <Toaster position="bottom-center" />
     </div>
   );

@@ -5,8 +5,8 @@ import { Mic, Flame, RotateCcw, Sparkles, MousePointerClick } from "lucide-react
 
 const CONFETTI_COLORS = ["#F4C2D7", "#E3C9FF", "#E86A92", "#F7D070", "#9E4770"];
 const CANDLE_COUNT = 5;
-const BLOW_THRESHOLD = 0.035;
-const BLOW_FRAMES_NEEDED = 8;
+const BLOW_THRESHOLD = 0.028;
+const BLOW_FRAMES_NEEDED = 6;
 
 const FlameWisp = ({ lit }) => (
   <div className="relative h-8 w-5 flex items-end justify-center">
