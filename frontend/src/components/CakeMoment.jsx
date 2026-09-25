@@ -161,6 +161,13 @@ export default function CakeMoment() {
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#2D1527] mb-4">
             Blow out the candles, Parul
           </h2>
+          <p
+            data-testid="cake-promise-line"
+            className="max-w-xl mx-auto font-display italic text-base sm:text-lg text-[#9E4770] leading-relaxed mb-8"
+          >
+            I told you we’d celebrate your birthday together, so here we are. ❤️ Go ahead, blow out the candles,
+            close your eyes, and make a wish. 🎂✨ I hope it comes true. 😊
+          </p>
           <p className="flex items-center justify-center gap-2 text-sm sm:text-base text-[#7C6377] mb-14">
             <MousePointerClick size={15} className="text-[#9E4770]" />
             Use your microphone and really blow — or tap each flame
