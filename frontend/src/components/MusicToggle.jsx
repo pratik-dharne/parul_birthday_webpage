@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Music, VolumeX } from "lucide-react";
 
-const SONG_URL = "/audio/happy-birthday-parul.m4a";
+const SONG_URL = "audio/happy-birthday-parul.m4a";
 
 export default function MusicToggle({ autostart = false }) {
   const [playing, setPlaying] = useState(false);

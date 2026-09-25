@@ -5,25 +5,25 @@ import Coverflow from "./Coverflow";
 
 const PHOTOS = [
   {
-    src: "/photos/parul-sunflowers.jpg",
+    src: "photos/parul-sunflowers.jpg",
     caption: "City lights & sunflowers",
     span: "sm:col-span-7 sm:row-span-2",
     ratio: "aspect-[4/3] sm:aspect-auto sm:h-full",
   },
   {
-    src: "/photos/parul-orange.jpg",
+    src: "photos/parul-orange.jpg",
     caption: "That smile",
     span: "sm:col-span-5",
     ratio: "aspect-[4/3]",
   },
   {
-    src: "/photos/parul-graduation.jpg",
+    src: "photos/parul-graduation.jpg",
     caption: "Conqueror of degrees",
     span: "sm:col-span-5",
     ratio: "aspect-[4/3]",
   },
   {
-    src: "/photos/parul-white.jpg",
+    src: "photos/parul-white.jpg",
     caption: "Elegance, personified",
     span: "sm:col-span-4",
     ratio: "aspect-[4/3]",

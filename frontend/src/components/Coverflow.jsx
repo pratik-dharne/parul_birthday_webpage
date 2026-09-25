@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
-  "/photos/collage-1.jpg",
-  "/photos/collage-2.jpg",
-  "/photos/collage-3.jpg",
-  "/photos/collage-4.jpg",
+  "photos/collage-1.jpg",
+  "photos/collage-2.jpg",
+  "photos/collage-3.jpg",
+  "photos/collage-4.jpg",
 ];
 
 export default function Coverflow() {
