@@ -22,14 +22,14 @@ export default function Footer() {
       src.buffer = buffer;
       const filter = ctx.createBiquadFilter();
       filter.type = "bandpass";
-      filter.frequency.value = 2600;
-      filter.Q.value = 1.2;
+      filter.frequency.value = 2200;
+      filter.Q.value = 0.9;
       const gain = ctx.createGain();
       const t = ctx.currentTime;
       gain.gain.setValueAtTime(0.0001, t);
-      [0, 0.12, 0.24].forEach((offset, i) => {
-        gain.gain.exponentialRampToValueAtTime(0.14 - i * 0.04, t + offset + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.1);
+      [0, 0.13, 0.26].forEach((offset, i) => {
+        gain.gain.exponentialRampToValueAtTime(0.38 - i * 0.08, t + offset + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.004, t + offset + 0.11);
       });
       gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
       src.connect(filter).connect(gain).connect(ctx.destination);
