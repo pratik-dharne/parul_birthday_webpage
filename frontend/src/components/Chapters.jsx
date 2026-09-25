@@ -7,11 +7,6 @@ const CHAPTERS = [
     text: "Some people walk into a room and the whole place softens. That is you, Parul — warmth that asks for nothing and gives everything.",
   },
   {
-    num: "02",
-    title: "Unapologetically Radiant",
-    text: "You laugh with your whole heart, dream with your whole mind, and love with your whole soul. Never shrink that for anyone.",
-  },
-  {
     num: "03",
     title: "A Year of Big Dreams & Laughter",
     text: "This past year you chased things that scared you and turned ordinary days into stories worth retelling. We noticed. We always notice.",
