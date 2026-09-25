@@ -33,6 +33,12 @@ const CHAPTERS = [
     text: "May you shine as bright as the sun, but stay as cool and calm as the moon. 🌞🌙 Wishing you lots of happiness, success, laughter, and beautiful moments ahead. Have an amazing birthday! 🎂✨",
     wide: true,
   },
+  {
+    num: "07",
+    title: "Never Dim Your Light",
+    text: "People will always try to judge or bring down what they don’t understand. But please don’t let that make you sad or make you doubt yourself. ❤️ Remember, there are people who see you for who you truly are, believe in you, and will always be there to support you. Keep being yourself, keep shining, and don’t let anyone take away the light you bring into the world. ✨",
+    wide: true,
+  },
 ];
 
 export default function Chapters() {
