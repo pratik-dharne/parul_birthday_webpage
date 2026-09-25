@@ -23,7 +23,7 @@ export default function Footer() {
           Made for <span className="text-[#E86A92]">Parul</span>
         </p>
         <p data-testid="footer-drawer-note" className="mt-6 font-display italic text-lg sm:text-xl text-[#F7D070]/90">
-          P.S. — check our drawer on Monday
+          P.S. 👀 If you’re coming to the office on Monday, you might want to check your drawer… 🎁✨😉
         </p>
         <p className="mt-8 text-sm text-[#F9F3E5]/60 font-light">
           May this year be your softest, bravest, brightest one yet.
