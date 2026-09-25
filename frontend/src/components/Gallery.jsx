@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, RotateCcw, RotateCw } from "lucide-react";
 
 const PHOTOS = [
   {
@@ -42,6 +43,11 @@ const PHOTOS = [
 ];
 
 export default function Gallery() {
+  const [rotations, setRotations] = useState({});
+
+  const rotate = (i, delta) =>
+    setRotations((prev) => ({ ...prev, [i]: (prev[i] || 0) + delta }));
+
   return (
     <section id="memories" data-testid="photo-gallery" className="py-24 sm:py-32 px-6 bg-[#F5E9F3]/40">
       <div className="max-w-6xl mx-auto">
@@ -78,8 +84,31 @@ export default function Gallery() {
                 src={p.src}
                 alt={p.overlay || p.caption}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out"
+                style={{
+                  transform: `rotate(${rotations[i] || 0}deg) scale(${
+                    Math.abs((rotations[i] || 0) / 90) % 2 === 1 ? 1.6 : 1.05
+                  })`,
+                }}
               />
+              <div className="absolute bottom-3 right-3 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button
+                  data-testid={`rotate-ccw-${i + 1}`}
+                  onClick={() => rotate(i, -90)}
+                  aria-label={`Rotate photo ${i + 1} anti-clockwise`}
+                  className="rounded-full bg-white/85 backdrop-blur p-2 shadow-md hover:bg-white hover:scale-110 transition-all cursor-pointer"
+                >
+                  <RotateCcw size={14} className="text-[#9E4770]" />
+                </button>
+                <button
+                  data-testid={`rotate-cw-${i + 1}`}
+                  onClick={() => rotate(i, 90)}
+                  aria-label={`Rotate photo ${i + 1} clockwise`}
+                  className="rounded-full bg-white/85 backdrop-blur p-2 shadow-md hover:bg-white hover:scale-110 transition-all cursor-pointer"
+                >
+                  <RotateCw size={14} className="text-[#9E4770]" />
+                </button>
+              </div>
               {p.overlay && (
                 <div
                   data-testid="gallery-cake-overlay"
