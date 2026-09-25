@@ -39,6 +39,12 @@ const CHAPTERS = [
     text: "People will always try to judge or bring down what they don’t understand. But please don’t let that make you sad or make you doubt yourself. ❤️ Remember, there are people who see you for who you truly are, believe in you, and will always be there to support you. Keep being yourself, keep shining, and don’t let anyone take away the light you bring into the world. ✨",
     wide: true,
   },
+  {
+    num: "08",
+    title: "You Inspire Me",
+    text: "If you remember, I told you this the very first time we spoke — the way you manage yourself and handle everything on your own has always inspired me. Cooking, managing the house, going to the market, handling work, staying away from your family, and even pushing through difficult days when you’re sick — you somehow keep going and give your best every single day. Seeing that motivates me to work harder too. No matter what you do or wherever you are, I’ll always respect and admire you. ❤️ They say, “God helps those who help themselves,” and seeing you makes me believe it. ✨",
+    wide: true,
+  },
 ];
 
 export default function Chapters() {
