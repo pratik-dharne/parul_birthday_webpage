@@ -73,6 +73,14 @@ export default function Footer() {
         <p className="mt-8 text-sm text-[#F9F3E5]/60 font-light">
           May this year be your softest, bravest, brightest one yet.
         </p>
+        <p
+          data-testid="footer-farewell"
+          className="mt-10 max-w-xl mx-auto font-display italic text-lg sm:text-xl text-[#F4C2D7]/90 leading-relaxed"
+        >
+          It makes me sad to see you go, but all good things must come to an end. Your visit was short, but it was
+          truly joyful, and I’m really glad you came. ❤️
+          <span className="block mt-3">Until next time, take care and keep smiling. ✨</span>
+        </p>
         <a
           href="#hero"
           data-testid="back-to-top-btn"
