@@ -29,6 +29,22 @@ const MaskedLine = ({ children, delay, className = "" }) => (
   </span>
 );
 
+const FlowerSprig = ({ className = "", style }) => (
+  <svg viewBox="0 0 40 64" fill="none" aria-hidden="true" className={className} style={style} data-testid="hero-flower-sprig">
+    <path d="M20 62 C18.5 46 22 36 20 24" stroke="#7C6377" strokeWidth="1.6" strokeLinecap="round" />
+    <path d="M20 46 C14 44 10.5 40 10 35 C15 36 19 40 20 46 Z" fill="#A678D8" opacity="0.45" />
+    <path d="M20 52 C26 50 29.5 46 30 41 C25 42 21 46 20 52 Z" fill="#A678D8" opacity="0.45" />
+    <g transform="translate(20 15)">
+      <ellipse cx="0" cy="-8" rx="4.6" ry="8" fill="#E86A92" opacity="0.85" />
+      <ellipse cx="0" cy="-8" rx="4.6" ry="8" fill="#F4C2D7" opacity="0.85" transform="rotate(72)" />
+      <ellipse cx="0" cy="-8" rx="4.6" ry="8" fill="#E86A92" opacity="0.85" transform="rotate(144)" />
+      <ellipse cx="0" cy="-8" rx="4.6" ry="8" fill="#F4C2D7" opacity="0.85" transform="rotate(216)" />
+      <ellipse cx="0" cy="-8" rx="4.6" ry="8" fill="#E86A92" opacity="0.85" transform="rotate(288)" />
+      <circle r="3.2" fill="#F7D070" />
+    </g>
+  </svg>
+);
+
 export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -80,16 +96,25 @@ export default function Hero() {
           </MaskedLine>
         </h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.9 }}
-          className="mt-6 max-w-lg mx-auto font-display italic text-base sm:text-lg text-[#9E4770] leading-relaxed"
-          data-testid="hero-flower-line"
+          className="mt-6 flex items-center justify-center gap-3 sm:gap-5 max-w-xl mx-auto"
         >
-          Like the flower, symbolize quiet beauty, grace, and resilience. You never seek attention; you simply bring
-          calm, warmth, and steadiness wherever you go, just by being yourself.
-        </motion.p>
+          <FlowerSprig className="h-12 w-8 shrink-0 origin-bottom animate-[flower-sway_3.6s_ease-in-out_infinite]" />
+          <p
+            data-testid="hero-flower-line"
+            className="font-display italic text-base sm:text-lg text-[#9E4770] leading-relaxed"
+          >
+            Like the flower, symbolize quiet beauty, grace, and resilience. You never seek attention; you simply bring
+            calm, warmth, and steadiness wherever you go, just by being yourself.
+          </p>
+          <FlowerSprig
+            className="h-12 w-8 shrink-0 -scale-x-100 origin-bottom animate-[flower-sway_3.6s_ease-in-out_infinite]"
+            style={{ animationDelay: "0.7s" }}
+          />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
