@@ -27,6 +27,12 @@ const CHAPTERS = [
     text: "I've said this once, and I'll say it again — you don't need a colour. You already bring so much colour into everything around you. 🌈✨",
     wide: true,
   },
+  {
+    num: "06",
+    title: "Sun-Bright, Moon-Calm",
+    text: "May you shine as bright as the sun, but stay as cool and calm as the moon. 🌞🌙 Wishing you lots of happiness, success, laughter, and beautiful moments ahead. Have an amazing birthday! 🎂✨",
+    wide: true,
+  },
 ];
 
 export default function Chapters() {
