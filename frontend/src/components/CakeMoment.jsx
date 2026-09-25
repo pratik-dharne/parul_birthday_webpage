@@ -50,7 +50,7 @@ const fireCelebrationConfetti = () => {
 };
 
 const FlameWisp = ({ lit }) => (
-  <div className="relative h-8 w-5 flex items-end justify-center">
+  <div className="relative h-11 w-7 flex items-end justify-center">
     <AnimatePresence mode="wait">
       {lit ? (
         <motion.div
@@ -58,12 +58,14 @@ const FlameWisp = ({ lit }) => (
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.4, opacity: 0, transition: { duration: 0.15 } }}
-          className="h-6 w-4 origin-bottom animate-[flame-flicker_0.9s_ease-in-out_infinite] rounded-[50%_50%_50%_50%/62%_62%_38%_38%]"
+          className="relative h-9 w-5 origin-bottom animate-[flame-flicker_0.9s_ease-in-out_infinite] rounded-[50%_50%_50%_50%/62%_62%_38%_38%]"
           style={{
-            background: "radial-gradient(circle at 50% 70%, #FFF6D8 0%, #F7D070 45%, #E8865A 80%, #E86A92 100%)",
-            boxShadow: "0 0 18px 6px rgba(247, 208, 112, 0.55)",
+            background: "radial-gradient(circle at 50% 70%, #FFF9E3 0%, #FFD76E 40%, #F59E4C 72%, #E86A92 100%)",
+            boxShadow: "0 0 26px 10px rgba(247, 208, 112, 0.75), 0 0 60px 24px rgba(232, 106, 146, 0.3)",
           }}
-        />
+        >
+          <span className="absolute left-1/2 top-[55%] h-3 w-2 -translate-x-1/2 rounded-full bg-white/90 blur-[2px]" />
+        </motion.div>
       ) : (
         <motion.span
           key="smoke"
@@ -247,6 +249,15 @@ export default function CakeMoment() {
         </motion.div>
 
         <div className="mt-10 flex flex-col items-center gap-4">
+          {!allOut && lit.some((l) => !l) && (
+            <button
+              data-testid="relight-some-btn"
+              onClick={relight}
+              className="inline-flex items-center gap-2 rounded-full border border-[#F4C2D7] bg-white/80 px-6 py-2.5 text-sm font-medium text-[#9E4770] hover:bg-[#F4C2D7]/30 transition-colors"
+            >
+              <RotateCcw size={14} /> Relight candles
+            </button>
+          )}
           {!micOn && !allOut && (
             <button
               data-testid="enable-mic-btn"
