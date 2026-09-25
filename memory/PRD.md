@@ -41,6 +41,7 @@ An elegant, dreamy single-page birthday experience for Parul (birthday: Septembe
 - 2026-09-25: Footer: "Made with love, for Parul" → "Made for Parul"; added office-drawer teaser line with wiggling Gift icon (hover animation)
 - 2026-09-25: Added 5th full-width chapter card "All the Colour We Need" with the user's colour quote
 - 2026-09-25: Candle finale now restarts the Suno song via a "parul:finale" window event (instrumental synth fanfare removed)
+- 2026-09-25: Gallery: per-photo hover rotate controls (90° CW/CCW); wide collage tile replaced with a swipeable 3D coverflow (Coverflow.jsx) built from 4 slices of parul-collage.jpg — arrow buttons + pointer swipe, rotateY/translateZ fan
 
 ## Backlog (prioritized)
 - P1: Confirm mic blowing works on a real device; tune threshold again if needed

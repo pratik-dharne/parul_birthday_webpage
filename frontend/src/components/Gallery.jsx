@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, RotateCcw, RotateCw } from "lucide-react";
+import Coverflow from "./Coverflow";
 
 const PHOTOS = [
   {
@@ -35,10 +36,10 @@ const PHOTOS = [
     ratio: "aspect-[16/9]",
   },
   {
-    src: "/photos/parul-collage.jpg",
+    coverflow: true,
     caption: "So many sides of you",
     span: "sm:col-span-12",
-    ratio: "aspect-[16/9] sm:aspect-[21/7]",
+    ratio: "aspect-[4/3] sm:aspect-[21/8]",
   },
 ];
 
@@ -80,17 +81,22 @@ export default function Gallery() {
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className={`group relative overflow-hidden rounded-3xl border-4 border-white shadow-[0_16px_40px_rgba(158,71,112,0.12)] ${p.span} ${p.ratio}`}
             >
-              <img
-                src={p.src}
-                alt={p.overlay || p.caption}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out"
-                style={{
-                  transform: `rotate(${rotations[i] || 0}deg) scale(${
-                    Math.abs((rotations[i] || 0) / 90) % 2 === 1 ? 1.6 : 1.05
-                  })`,
-                }}
-              />
+              {p.coverflow ? (
+                <Coverflow />
+              ) : (
+                <img
+                  src={p.src}
+                  alt={p.overlay || p.caption}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out"
+                  style={{
+                    transform: `rotate(${rotations[i] || 0}deg) scale(${
+                      Math.abs((rotations[i] || 0) / 90) % 2 === 1 ? 1.6 : 1.05
+                    })`,
+                  }}
+                />
+              )}
+              {!p.coverflow && (
               <div className="absolute bottom-3 right-3 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button
                   data-testid={`rotate-ccw-${i + 1}`}
@@ -109,6 +115,7 @@ export default function Gallery() {
                   <RotateCw size={14} className="text-[#9E4770]" />
                 </button>
               </div>
+              )}
               {p.overlay && (
                 <div
                   data-testid="gallery-cake-overlay"
