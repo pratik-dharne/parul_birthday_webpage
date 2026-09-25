@@ -45,6 +45,13 @@ html {
     50% { transform: scale(1.1, 0.94) rotate(3deg); }
 }
 
+@keyframes gift-wiggle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-14deg) scale(1.12); }
+    50% { transform: rotate(11deg) scale(1.08); }
+    75% { transform: rotate(-7deg) scale(1.1); }
+}
+
 .marquee-track {
     display: flex;
     width: max-content;

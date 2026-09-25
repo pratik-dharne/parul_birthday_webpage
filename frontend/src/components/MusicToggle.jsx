@@ -2,14 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Music, VolumeX } from "lucide-react";
 
-export const FREQ = { G4: 392.0, A4: 440.0, B4: 493.88, C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99 };
-export const MELODY = [
-  ["G4", 0.75], ["G4", 0.25], ["A4", 1], ["G4", 1], ["C5", 1], ["B4", 2],
-  ["G4", 0.75], ["G4", 0.25], ["A4", 1], ["G4", 1], ["D5", 1], ["C5", 2],
-  ["G4", 0.75], ["G4", 0.25], ["G5", 1], ["E5", 1], ["C5", 1], ["B4", 1], ["A4", 2],
-  ["F5", 0.75], ["F5", 0.25], ["E5", 1], ["C5", 1], ["D5", 1], ["C5", 2.5],
-];
-
 const SONG_URL = "/audio/happy-birthday-parul.m4a";
 
 export default function MusicToggle({ autostart = false }) {
@@ -51,6 +43,18 @@ export default function MusicToggle({ autostart = false }) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autostart]);
+
+  useEffect(() => {
+    const onFinale = () => {
+      const a = getAudio();
+      a.loop = false;
+      a.currentTime = 0;
+      a.play().then(() => setPlaying(true)).catch(() => {});
+    };
+    window.addEventListener("parul:finale", onFinale);
+    return () => window.removeEventListener("parul:finale", onFinale);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(
     () => () => {

@@ -21,6 +21,12 @@ const CHAPTERS = [
     title: "Wishes for the Journey Ahead",
     text: "May September 26 open a chapter of soft mornings, brave choices, and love that finds you exactly where you are.",
   },
+  {
+    num: "05",
+    title: "All the Colour We Need",
+    text: "I've said this once, and I'll say it again — you don't need a colour. You already bring so much colour into everything around you. 🌈✨",
+    wide: true,
+  },
 ];
 
 export default function Chapters() {
@@ -48,7 +54,9 @@ export default function Chapters() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -6 }}
-            className={`card-surface rounded-3xl border border-[#F4C2D7]/50 p-10 sm:p-12 shadow-[0_16px_40px_rgba(158,71,112,0.08)] transition-shadow hover:shadow-[0_24px_60px_rgba(158,71,112,0.16)] ${i % 2 === 1 ? "sm:mt-12" : ""}`}
+            className={`card-surface rounded-3xl border border-[#F4C2D7]/50 p-10 sm:p-12 shadow-[0_16px_40px_rgba(158,71,112,0.08)] transition-shadow hover:shadow-[0_24px_60px_rgba(158,71,112,0.16)] ${
+              c.wide ? "sm:col-span-2 text-center" : i % 2 === 1 ? "sm:mt-12" : ""
+            }`}
           >
             <h3 className="font-display text-xl sm:text-2xl text-[#2D1527] mb-4">{c.title}</h3>
             <p className="text-sm sm:text-base text-[#4A3245] leading-relaxed">{c.text}</p>

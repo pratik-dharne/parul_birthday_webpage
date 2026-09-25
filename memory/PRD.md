@@ -38,6 +38,9 @@ An elegant, dreamy single-page birthday experience for Parul (birthday: Septembe
 - 2026-09-25: Music toggle now plays a real vocal "Happy Birthday" song naming Parul (OpenAI TTS via Emergent key, voice shimmer, saved at /app/frontend/public/audio/happy-birthday-parul.mp3, loops); instrumental synth kept only for the candle-celebration fanfare
 - 2026-09-25: Replaced TTS track with the user's own Suno song "Happy Birthday Parul" (pop, celebratory, 1:55) — captured the deobfuscated stream from suno.com via Playwright (SourceBuffer hook + expose_function bridge) into /app/frontend/public/audio/happy-birthday-parul.m4a; Suno progressive streams are obfuscated and CDN URLs are signed, direct download is not possible
 - 2026-09-25: Chapters section edits per user: removed "A manifesto for Parul" eyebrow, removed "Four" from heading, removed 01-04 card numbers
+- 2026-09-25: Footer: "Made with love, for Parul" → "Made for Parul"; added office-drawer teaser line with wiggling Gift icon (hover animation)
+- 2026-09-25: Added 5th full-width chapter card "All the Colour We Need" with the user's colour quote
+- 2026-09-25: Candle finale now restarts the Suno song via a "parul:finale" window event (instrumental synth fanfare removed)
 
 ## Backlog (prioritized)
 - P1: Confirm mic blowing works on a real device; tune threshold again if needed

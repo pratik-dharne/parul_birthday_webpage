@@ -2,43 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { Mic, Flame, RotateCcw, Sparkles, MousePointerClick } from "lucide-react";
-import { FREQ, MELODY } from "./MusicToggle";
 
 const CONFETTI_COLORS = ["#F4C2D7", "#E3C9FF", "#E86A92", "#F7D070", "#9E4770"];
 const CANDLE_COUNT = 5;
 const BLOW_THRESHOLD = 0.028;
 const BLOW_FRAMES_NEEDED = 6;
-
-const playCelebrationTune = () => {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const beat = 0.34;
-    let t = ctx.currentTime + 0.05;
-    const voice = (freq, start, dur, type, peak) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = type;
-      osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(peak, start + 0.025);
-      gain.gain.setValueAtTime(peak, start + dur * 0.7);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + dur * 0.98);
-      osc.connect(gain).connect(ctx.destination);
-      osc.start(start);
-      osc.stop(start + dur);
-    };
-    for (const [note, beats] of MELODY) {
-      const dur = beats * beat;
-      const f = FREQ[note];
-      voice(f, t, dur, "triangle", 0.3);
-      voice(f * 1.5, t, dur, "sine", 0.1);
-      voice(f * 2, t, dur, "sine", 0.08);
-      t += dur;
-    }
-    [FREQ.C5, FREQ.E5, FREQ.G5, FREQ.C5 * 2].forEach((f, i) => voice(f, t + i * 0.12, 0.5, "triangle", 0.16));
-    setTimeout(() => ctx.close().catch(() => {}), (t - ctx.currentTime) * 1000 + 2000);
-  } catch {}
-};
 
 const fireCelebrationConfetti = () => {
   confetti({ particleCount: 140, angle: 60, spread: 65, origin: { x: 0, y: 0.7 }, colors: CONFETTI_COLORS });
@@ -169,7 +137,7 @@ export default function CakeMoment() {
     stopMic();
     const t = setTimeout(() => {
       fireCelebrationConfetti();
-      playCelebrationTune();
+      window.dispatchEvent(new Event("parul:finale"));
       setMessageShown(true);
     }, 600);
     return () => clearTimeout(t);

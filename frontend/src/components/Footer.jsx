@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUp, Sparkles } from "lucide-react";
+import { ArrowUp, Sparkles, Gift } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -22,8 +22,17 @@ export default function Footer() {
         <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-light italic leading-tight">
           Made for <span className="text-[#E86A92]">Parul</span>
         </p>
-        <p data-testid="footer-drawer-note" className="mt-6 font-display italic text-lg sm:text-xl text-[#F7D070]/90">
-          P.S. 👀 If you’re coming to the office on Monday, you might want to check your drawer… 🎁✨😉
+        <p
+          data-testid="footer-drawer-note"
+          className="group mt-6 font-display italic text-lg sm:text-xl text-[#F7D070]/90 inline-flex items-center justify-center gap-2.5 cursor-default"
+        >
+          <Gift
+            size={22}
+            aria-hidden="true"
+            data-testid="footer-gift-icon"
+            className="text-[#E86A92] shrink-0 group-hover:animate-[gift-wiggle_0.55s_ease-in-out_2]"
+          />
+          <span>P.S. 👀 If you’re coming to the office on Monday, you might want to check your drawer… 🎁✨😉</span>
         </p>
         <p className="mt-8 text-sm text-[#F9F3E5]/60 font-light">
           May this year be your softest, bravest, brightest one yet.
