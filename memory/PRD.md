@@ -35,6 +35,7 @@ An elegant, dreamy single-page birthday experience for Parul (birthday: Septembe
 - 2026-09-25: Candle mic sensitivity loosened further (RMS threshold 0.028, 6 sustained frames)
 - 2026-09-25: Fuller celebration on all candles out — 3-wave confetti (incl. star shapes) + richer Happy Birthday arrangement (melody + fifth + octave voices + sparkle finish)
 - 2026-09-25: Candle flames made bigger/brighter (glow halo, white core) after user reported candles not looking lit; added always-visible "Relight candles" button whenever any candle is out
+- 2026-09-25: Music toggle now plays a real vocal "Happy Birthday" song naming Parul (OpenAI TTS via Emergent key, voice shimmer, saved at /app/frontend/public/audio/happy-birthday-parul.mp3, loops); instrumental synth kept only for the candle-celebration fanfare
 
 ## Backlog (prioritized)
 - P1: Confirm mic blowing works on a real device; tune threshold again if needed
