@@ -2,16 +2,6 @@ import { motion } from "framer-motion";
 
 const CHAPTERS = [
   {
-    num: "01",
-    title: "The Light in Every Room",
-    text: "Some people walk into a room and the whole place softens. That is you, Parul — warmth that asks for nothing and gives everything.",
-  },
-  {
-    num: "04",
-    title: "Wishes for the Journey Ahead",
-    text: "May September 26 open a chapter of soft mornings, brave choices, and love that finds you exactly where you are.",
-  },
-  {
     num: "05",
     title: "All the Colour We Need",
     text: "I've said this once, and I'll say it again — you don't need a colour. You already bring so much colour into everything around you. 🌈✨",
