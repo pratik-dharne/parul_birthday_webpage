@@ -33,9 +33,8 @@ export default function Chapters() {
         transition={{ duration: 0.8 }}
         className="mb-16"
       >
-        <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9E4770] mb-4">A manifesto for Parul</p>
         <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#2D1527] max-w-xl">
-          Four chapters on why the world is better with you in it
+          Chapters on why the world is better with you in it
         </h2>
       </motion.div>
 
@@ -51,8 +50,7 @@ export default function Chapters() {
             whileHover={{ y: -6 }}
             className={`card-surface rounded-3xl border border-[#F4C2D7]/50 p-10 sm:p-12 shadow-[0_16px_40px_rgba(158,71,112,0.08)] transition-shadow hover:shadow-[0_24px_60px_rgba(158,71,112,0.16)] ${i % 2 === 1 ? "sm:mt-12" : ""}`}
           >
-            <span className="font-display text-6xl font-light text-[#F4C2D7]">{c.num}</span>
-            <h3 className="font-display text-xl sm:text-2xl text-[#2D1527] mt-6 mb-4">{c.title}</h3>
+            <h3 className="font-display text-xl sm:text-2xl text-[#2D1527] mb-4">{c.title}</h3>
             <p className="text-sm sm:text-base text-[#4A3245] leading-relaxed">{c.text}</p>
           </motion.article>
         ))}

@@ -10,7 +10,7 @@ export const MELODY = [
   ["F5", 0.75], ["F5", 0.25], ["E5", 1], ["C5", 1], ["D5", 1], ["C5", 2.5],
 ];
 
-const SONG_URL = "/audio/happy-birthday-parul.mp3";
+const SONG_URL = "/audio/happy-birthday-parul.m4a";
 
 export default function MusicToggle({ autostart = false }) {
   const [playing, setPlaying] = useState(false);
