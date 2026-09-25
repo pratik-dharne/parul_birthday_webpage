@@ -81,10 +81,21 @@ export default function Hero() {
         </h1>
 
         <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.05, duration: 0.9 }}
+          className="mt-6 max-w-lg mx-auto font-display italic text-base sm:text-lg text-[#9E4770] leading-relaxed"
+          data-testid="hero-flower-line"
+        >
+          Like the flower, symbolize quiet beauty, grace, and resilience. You never seek attention; you simply bring
+          calm, warmth, and steadiness wherever you go, just by being yourself.
+        </motion.p>
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.9 }}
-          className="mt-8 max-w-md mx-auto text-base sm:text-lg font-light text-[#4A3245] leading-relaxed"
+          transition={{ delay: 1.6, duration: 0.9 }}
+          className="mt-6 max-w-md mx-auto text-base sm:text-lg font-light text-[#4A3245] leading-relaxed"
           data-testid="hero-subtitle"
         >
           Celebrating another trip around the sun — and the wonderful person taking it.
