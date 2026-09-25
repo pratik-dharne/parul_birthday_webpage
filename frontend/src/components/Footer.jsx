@@ -20,7 +20,10 @@ export default function Footer() {
           <Sparkles size={13} /> September 26 <Sparkles size={13} />
         </p>
         <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-light italic leading-tight">
-          Made with love, for <span className="text-[#E86A92]">Parul</span>
+          Made for <span className="text-[#E86A92]">Parul</span>
+        </p>
+        <p data-testid="footer-drawer-note" className="mt-6 font-display italic text-lg sm:text-xl text-[#F7D070]/90">
+          P.S. — check our drawer on Monday
         </p>
         <p className="mt-8 text-sm text-[#F9F3E5]/60 font-light">
           May this year be your softest, bravest, brightest one yet.
