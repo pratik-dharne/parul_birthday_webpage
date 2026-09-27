@@ -6,8 +6,8 @@ const PASSWORD = "parul26";
 
 export const isBirthdayOrLater = () => {
   const now = new Date();
-  const birthday = new Date(now.getFullYear(), 8, 26);
-  return now >= birthday;
+  // Open only on September 26 (month index 8 = September), any year
+  return now.getMonth() === 8 && now.getDate() === 26;
 };
 
 export default function PasswordGate({ onUnlock }) {
