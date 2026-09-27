@@ -64,7 +64,7 @@ const Confetti = () => (
   <div
     data-testid="countdown-confetti"
     aria-hidden="true"
-    className="pointer-events-none fixed inset-0 z-[100] overflow-hidden"
+    className="pointer-events-none fixed inset-0 z-[90] overflow-hidden"
   >
     <style>{`
       @keyframes birthday-confetti-fall {
@@ -109,7 +109,7 @@ const Unit = ({ value, label, testid }) => (
   </div>
 );
 
-export default function Countdown() {
+export default function Countdown({ unlocked }) {
   const [state, setState] = useState(getState);
 
   useEffect(() => {
@@ -124,7 +124,7 @@ export default function Countdown() {
 
   return (
     <section id="countdown" data-testid="countdown-timer" className="relative py-24 sm:py-32 px-6 bg-[#FAF4F7]">
-      {state.isToday && <Confetti />}
+      {state.isToday && unlocked && <Confetti />}
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
