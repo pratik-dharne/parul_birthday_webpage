@@ -43,9 +43,7 @@ const Nav = () => (
 );
 
 export default function App() {
-  const [unlocked, setUnlocked] = useState(
-    () => isBirthdayOrLater() || localStorage.getItem("parul-unlocked") === "yes"
-  );
+  const [unlocked, setUnlocked] = useState(() => isBirthdayOrLater());
 
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
