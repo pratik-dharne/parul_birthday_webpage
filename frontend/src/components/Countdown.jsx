@@ -31,6 +31,17 @@ function getState() {
 
 const pad = (n) => String(n).padStart(2, "0");
 
+const ordinal = (n) => {
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${n}th`;
+  switch (n % 10) {
+    case 1: return `${n}st`;
+    case 2: return `${n}nd`;
+    case 3: return `${n}rd`;
+    default: return `${n}th`;
+  }
+};
+
 const Unit = ({ value, label, testid }) => (
   <div className="card-surface rounded-3xl border border-[#F4C2D7]/50 backdrop-blur px-6 sm:px-10 py-8 text-center shadow-[0_16px_40px_rgba(158,71,112,0.10)]">
     <div data-testid={testid} className="font-display text-4xl sm:text-5xl lg:text-6xl text-[#2D1527] tabular-nums">
@@ -68,14 +79,14 @@ export default function Countdown() {
         <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#2D1527] mb-12">
           {state.isToday
             ? `It's today. Let the celebration begin.`
-            : `Counting down to Parul's ${state.nextAge}th birthday`}
+            : `Counting down to Parul's ${ordinal(state.nextAge)} birthday`}
         </h2>
 
         {state.isToday ? (
           <div data-testid="countdown-today" className="flex items-center justify-center gap-3 text-[#E86A92]">
             <PartyPopper size={28} />
             <span className="font-display text-3xl sm:text-4xl italic">
-              Happy {state.age}th Birthday, Parul!
+              Happy {ordinal(state.age)} Birthday, Parul!
             </span>
             <PartyPopper size={28} />
           </div>
