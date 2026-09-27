@@ -2,13 +2,31 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { PartyPopper } from "lucide-react";
 
+const BIRTH_YEAR = 2003;
+const BIRTH_MONTH = 8; // September (0-based)
+const BIRTH_DAY = 26;
+
 function getState() {
   const now = new Date();
-  const start = new Date(now.getFullYear(), 8, 26);
-  const end = new Date(now.getFullYear(), 8, 27);
-  if (now >= start && now < end) return { isToday: true, diff: 0 };
-  const target = now < start ? start : new Date(now.getFullYear() + 1, 8, 26);
-  return { isToday: false, diff: target - now };
+  const start = new Date(now.getFullYear(), BIRTH_MONTH, BIRTH_DAY);
+  const end = new Date(now.getFullYear(), BIRTH_MONTH, BIRTH_DAY + 1);
+
+  const age = now >= start ? now.getFullYear() - BIRTH_YEAR : now.getFullYear() - BIRTH_YEAR - 1;
+
+  if (now >= start && now < end) {
+    return { isToday: true, diff: 0, age };
+  }
+
+  const target =
+    now < start
+      ? start
+      : new Date(now.getFullYear() + 1, BIRTH_MONTH, BIRTH_DAY);
+
+  return {
+    isToday: false,
+    diff: target - now,
+    nextAge: now < start ? now.getFullYear() - BIRTH_YEAR : now.getFullYear() + 1 - BIRTH_YEAR,
+  };
 }
 
 const pad = (n) => String(n).padStart(2, "0");
@@ -44,15 +62,21 @@ export default function Countdown() {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-4xl mx-auto text-center"
       >
-        <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9E4770] mb-4">The big day approaches</p>
+        <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9E4770] mb-4">
+          The big day approaches
+        </p>
         <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#2D1527] mb-12">
-          {state.isToday ? "It's today. Let the celebration begin." : "Counting down to September 26"}
+          {state.isToday
+            ? `It's today. Let the celebration begin.`
+            : `Counting down to Parul's ${state.nextAge}th birthday`}
         </h2>
 
         {state.isToday ? (
           <div data-testid="countdown-today" className="flex items-center justify-center gap-3 text-[#E86A92]">
             <PartyPopper size={28} />
-            <span className="font-display text-3xl sm:text-4xl italic">Happy Birthday, Parul!</span>
+            <span className="font-display text-3xl sm:text-4xl italic">
+              Happy {state.age}th Birthday, Parul!
+            </span>
             <PartyPopper size={28} />
           </div>
         ) : (
