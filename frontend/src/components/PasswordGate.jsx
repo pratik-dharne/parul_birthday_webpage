@@ -17,7 +17,6 @@ export default function PasswordGate({ onUnlock }) {
   const submit = (e) => {
     e.preventDefault();
     if (value.trim().toLowerCase() === PASSWORD) {
-      localStorage.setItem("parul-unlocked", "yes");
       onUnlock();
     } else {
       setError(true);
