@@ -42,12 +42,21 @@ const ordinal = (n) => {
   }
 };
 
-const confettiPieces = Array.from({ length: 60 }, (_, i) => ({
-  left: `${(i * 37) % 101}%`,
-  delay: `${(i % 12) * 0.08}s`,
-  duration: `${2.8 + (i % 7) * 0.18}s`,
+const CONFETTI_COLORS = [
+  "#E86A92",
+  "#F4C2D7",
+  "#9E4770",
+  "#FFD166",
+  "#7BC8A4",
+  "#7AA7E8",
+];
+
+const confettiPieces = Array.from({ length: 90 }, (_, i) => ({
+  left: `${(i * 41) % 101}%`,
+  delay: `${(i % 18) * 0.06}s`,
+  duration: `${3.2 + (i % 8) * 0.18}s`,
   rotation: `${(i * 47) % 360}deg`,
-  drift: `${((i * 23) % 180) - 90}px`,
+  drift: `${((i * 29) % 260) - 130}px`,
   size: `${7 + (i % 4) * 2}px`,
 }));
 
@@ -55,7 +64,7 @@ const Confetti = () => (
   <div
     data-testid="countdown-confetti"
     aria-hidden="true"
-    className="pointer-events-none absolute inset-0 overflow-hidden"
+    className="pointer-events-none fixed inset-0 z-[100] overflow-hidden"
   >
     <style>{`
       @keyframes birthday-confetti-fall {
@@ -63,11 +72,11 @@ const Confetti = () => (
           transform: translate3d(0, -12vh, 0) rotate(var(--rotation));
           opacity: 0;
         }
-        10% {
+        8% {
           opacity: 1;
         }
         100% {
-          transform: translate3d(var(--drift), 115vh, 0) rotate(calc(var(--rotation) + 720deg));
+          transform: translate3d(var(--drift), 112vh, 0) rotate(calc(var(--rotation) + 900deg));
           opacity: 0;
         }
       }
@@ -81,8 +90,8 @@ const Confetti = () => (
           left: piece.left,
           width: piece.size,
           height: `${Number.parseInt(piece.size, 10) * 1.8}px`,
-          backgroundColor: ["#E86A92", "#F4C2D7", "#9E4770", "#FFD166", "#7BC8A4", "#7AA7E8"][index % 6],
-          animation: `birthday-confetti-fall ${piece.duration} ease-out ${piece.delay} 1 both`,
+          backgroundColor: CONFETTI_COLORS[index % CONFETTI_COLORS.length],
+          animation: `birthday-confetti-fall ${piece.duration} cubic-bezier(0.22, 0.61, 0.36, 1) ${piece.delay} 1 both`,
           ["--rotation"]: piece.rotation,
           ["--drift"]: piece.drift,
         }}
@@ -114,7 +123,7 @@ export default function Countdown() {
   const seconds = Math.floor((state.diff % 60000) / 1000);
 
   return (
-    <section id="countdown" data-testid="countdown-timer" className="relative overflow-hidden py-24 sm:py-32 px-6 bg-[#FAF4F7]">
+    <section id="countdown" data-testid="countdown-timer" className="relative py-24 sm:py-32 px-6 bg-[#FAF4F7]">
       {state.isToday && <Confetti />}
 
       <motion.div
