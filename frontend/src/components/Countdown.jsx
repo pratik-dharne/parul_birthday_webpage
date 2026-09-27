@@ -42,6 +42,55 @@ const ordinal = (n) => {
   }
 };
 
+const confettiPieces = Array.from({ length: 60 }, (_, i) => ({
+  left: `${(i * 37) % 101}%`,
+  delay: `${(i % 12) * 0.08}s`,
+  duration: `${2.8 + (i % 7) * 0.18}s`,
+  rotation: `${(i * 47) % 360}deg`,
+  drift: `${((i * 23) % 180) - 90}px`,
+  size: `${7 + (i % 4) * 2}px`,
+}));
+
+const Confetti = () => (
+  <div
+    data-testid="countdown-confetti"
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 overflow-hidden"
+  >
+    <style>{`
+      @keyframes birthday-confetti-fall {
+        0% {
+          transform: translate3d(0, -12vh, 0) rotate(var(--rotation));
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          transform: translate3d(var(--drift), 115vh, 0) rotate(calc(var(--rotation) + 720deg));
+          opacity: 0;
+        }
+      }
+    `}</style>
+
+    {confettiPieces.map((piece, index) => (
+      <span
+        key={index}
+        className="absolute top-0 block rounded-sm"
+        style={{
+          left: piece.left,
+          width: piece.size,
+          height: `${Number.parseInt(piece.size, 10) * 1.8}px`,
+          backgroundColor: ["#E86A92", "#F4C2D7", "#9E4770", "#FFD166", "#7BC8A4", "#7AA7E8"][index % 6],
+          animation: `birthday-confetti-fall ${piece.duration} ease-out ${piece.delay} 1 both`,
+          ["--rotation"]: piece.rotation,
+          ["--drift"]: piece.drift,
+        }}
+      />
+    ))}
+  </div>
+);
+
 const Unit = ({ value, label, testid }) => (
   <div className="card-surface rounded-3xl border border-[#F4C2D7]/50 backdrop-blur px-6 sm:px-10 py-8 text-center shadow-[0_16px_40px_rgba(158,71,112,0.10)]">
     <div data-testid={testid} className="font-display text-4xl sm:text-5xl lg:text-6xl text-[#2D1527] tabular-nums">
@@ -65,13 +114,15 @@ export default function Countdown() {
   const seconds = Math.floor((state.diff % 60000) / 1000);
 
   return (
-    <section id="countdown" data-testid="countdown-timer" className="relative py-24 sm:py-32 px-6 bg-[#FAF4F7]">
+    <section id="countdown" data-testid="countdown-timer" className="relative overflow-hidden py-24 sm:py-32 px-6 bg-[#FAF4F7]">
+      {state.isToday && <Confetti />}
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-4xl mx-auto text-center"
+        className="relative z-10 max-w-4xl mx-auto text-center"
       >
         <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9E4770] mb-4">
           The big day approaches
