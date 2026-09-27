@@ -4,7 +4,7 @@ import { PartyPopper } from "lucide-react";
 
 const BIRTH_YEAR = 2003;
 const BIRTH_MONTH = 8; // September (0-based)
-const BIRTH_DAY = 26;
+const BIRTH_DAY = 27; // TEMPORARY TEST: simulate the birthday today
 
 function getState() {
   const now = new Date();
